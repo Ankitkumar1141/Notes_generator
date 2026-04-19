@@ -1,0 +1,5 @@
+streamlit
+mysql-connector-python
+PyPDF2
+mistralai
+python-dotenv

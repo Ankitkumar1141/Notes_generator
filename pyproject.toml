@@ -1,0 +1,20 @@
+[project]
+name = "ai-notes-generator"
+version = "0.1.0"
+description = "AI Notes Generator using Mistral AI"
+authors = [
+{ name = "Ankit Kumar Jha" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[project.scripts]
+ai-notes = "app.main:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
