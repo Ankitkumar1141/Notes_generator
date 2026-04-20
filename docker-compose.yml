@@ -1,0 +1,25 @@
+services:
+  app:
+    build: .
+    container_name: ai_notes_app
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    environment:
+      DB_HOST: mysql
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: ai_notes_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
